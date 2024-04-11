@@ -23,8 +23,11 @@ body {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
-
+button{
+    cursor: pointer;
+}
 li {
     list-style: none;
 }
@@ -112,6 +115,10 @@ h2 {
     transition: box-shadow .6s, background-color .6s;
     box-shadow: 3px 3px 2px black;
 }
+.button:hover{
+    transition: ease-in-out 1s;
+    transform: scale(1.1)
+}
 
 .button:hover,
 .button:active {
@@ -124,11 +131,11 @@ h2 {
 
 .floating-nav {
     position: fixed;
-    bottom: 0;
+    bottom: 40px;
     left: 0;
     right: 0;
     top: auto;
-    padding: 31px;
+    padding: 15px;
     z-index: 9999;
 }
 
@@ -793,13 +800,29 @@ footer {
     gap: 20px;
 }
 
-.footer ul li a {
+.footer ul li a:visited, 
+.footer ul li a:link {
+    cursor: pointer;
     font-weight: 500;
     font-size: 14px;
     color: #ffffff;
     font-family: sans-serif;
+    position: relative;
 }
 
+.footer ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    height: 1px;
+    background-color: #ffffff;
+    width: 0%;
+    left: 0;
+    transition: 1s ease;
+}
+.footer ul li a:hover::after{
+    width: 100%;
+}
 
 /* *************************************** */
 /* BELOW 1334PX SMALER DESKTOP */
@@ -873,6 +896,9 @@ footer {
 
     .para-down span:first-child {
         color: var(--primiray-color);
+    }
+    .head-bnf {
+        font-size: 32px;
     }
 
 
